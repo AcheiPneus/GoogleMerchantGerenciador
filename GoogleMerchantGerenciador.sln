@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMerchantGerenciador", "GoogleMerchantGerenciador\GoogleMerchantGerenciador.csproj", "{B07A602F-9B00-4A21-97CF-0F6710C205C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMerchantApi", "..\GoogleMerchantApi\GoogleMerchantApi\GoogleMerchantApi.csproj", "{92838640-08D2-4B5B-A427-B7333C248EF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerDBApi", "..\ControllerDBApi\ControllerDBApi\ControllerDBApi.csproj", "{8E48D71A-DCCF-4CE9-912D-535B9D2B7D75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilitarios", "..\Utilitarios\Utilitarios\Utilitarios.csproj", "{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMerchantConsole", "..\GoogleMerchantConsole\GoogleMerchantConsole\GoogleMerchantConsole.csproj", "{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMerchantApi.Tests", "..\GoogleMerchantApi\GoogleMerchantApi.Tests\GoogleMerchantApi.Tests.csproj", "{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B07A602F-9B00-4A21-97CF-0F6710C205C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07A602F-9B00-4A21-97CF-0F6710C205C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07A602F-9B00-4A21-97CF-0F6710C205C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07A602F-9B00-4A21-97CF-0F6710C205C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92838640-08D2-4B5B-A427-B7333C248EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92838640-08D2-4B5B-A427-B7333C248EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92838640-08D2-4B5B-A427-B7333C248EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92838640-08D2-4B5B-A427-B7333C248EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E48D71A-DCCF-4CE9-912D-535B9D2B7D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E48D71A-DCCF-4CE9-912D-535B9D2B7D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E48D71A-DCCF-4CE9-912D-535B9D2B7D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E48D71A-DCCF-4CE9-912D-535B9D2B7D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
