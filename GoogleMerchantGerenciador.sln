@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerDBApi", "..\Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilitarios", "..\Utilitarios\Utilitarios\Utilitarios.csproj", "{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMerchantConsole", "..\GoogleMerchantConsole\GoogleMerchantConsole\GoogleMerchantConsole.csproj", "{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMerchantApi.Tests", "..\GoogleMerchantApi\GoogleMerchantApi.Tests\GoogleMerchantApi.Tests.csproj", "{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}"
 EndProject
 Global
@@ -34,10 +32,6 @@ Global
 		{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D24032D-6B9F-4A83-AB66-157CBA3D9B33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFFAE6A1-EE24-46EE-ACFE-E6932FC5E012}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEB74DE8-900D-4970-B2F9-A68A204DF9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
