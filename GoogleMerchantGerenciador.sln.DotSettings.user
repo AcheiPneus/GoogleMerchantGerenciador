@@ -23,5 +23,6 @@
     &lt;TestId&gt;VsTest::EEB74DE8-900D-4970-B2F9-A68A204DF9CE::net8.0::executor://mstestadapter/v4#GoogleMerchantApi.Tests.ActionsTest.AtualizaTeste&lt;/TestId&gt;
     &lt;TestId&gt;VsTest::EEB74DE8-900D-4970-B2F9-A68A204DF9CE::net8.0::executor://mstestadapter/v4#GoogleMerchantApi.Tests.ActionsTest&lt;/TestId&gt;
     &lt;TestId&gt;VsTest::EEB74DE8-900D-4970-B2F9-A68A204DF9CE::net8.0::executor://mstestadapter/v4#GoogleMerchantApi.Tests.MerchantClientTest.PathProductPromoTest&lt;/TestId&gt;
+    &lt;TestId&gt;VsTest::EEB74DE8-900D-4970-B2F9-A68A204DF9CE::net8.0::executor://mstestadapter/v4#GoogleMerchantApi.Tests.ProductBuilderTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
