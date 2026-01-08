@@ -11,6 +11,7 @@ var queue = (await db.GoogleFeed.GetFeedQueue()).ToArray();
 
 var count = 0;
 Console.WriteLine(queue.Length);
+logger.Info("começando");
 foreach (var item in queue)
 {
     if (count % 10 == 0) Console.WriteLine(count);
@@ -30,11 +31,14 @@ return;
 
 async Task Proccessa(FilaProdutoFeed filaProdutoFeed, Actions actions)
 {
-    var r = filaProdutoFeed.Acao switch
+    switch (filaProdutoFeed.Acao)
     {
-        0 => actions.ProcessaApaga(filaProdutoFeed.Sku),
-        1 => actions.InsereOuAtualiza(filaProdutoFeed.Sku),
-        2 => actions.InsereOuAtualiza(filaProdutoFeed.Sku),
-        _ => throw new ArgumentOutOfRangeException()
-    };
+        case 0:
+            await actions.ProcessaApaga(filaProdutoFeed.Sku);
+            break;
+        case 1:
+        case 2:
+            await actions.InsereOuAtualiza(filaProdutoFeed.Sku);
+            break;
+    }
 }
