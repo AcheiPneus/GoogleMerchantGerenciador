@@ -11,7 +11,7 @@ var queue = (await db.GoogleFeed.GetFeedQueue()).ToArray();
 
 var count = 0;
 Console.WriteLine(queue.Length);
-logger.Info("começando");
+//logger.Info("começando");
 foreach (var item in queue)
 {
     if (count % 10 == 0) Console.WriteLine(count);
