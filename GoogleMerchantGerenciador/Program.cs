@@ -23,7 +23,7 @@ foreach (var item in queue)
     }
     catch (Exception e)
     {
-        logger.Error(e.Message);
+        logger.Error($"{item.idFilaProdutoFeedHistorico} - {item.Sku}: {e.Message}");
     }
 }
 
