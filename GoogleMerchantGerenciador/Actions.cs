@@ -1,5 +1,4 @@
 using ControllerDBApi;
-using Google.Shopping.Merchant.Products.V1;
 using GoogleMerchantApi;
 using Grpc.Core;
 using NLog;
@@ -10,7 +9,10 @@ public class Actions(ControllerDB db)
 {
     private readonly MerchantClient _client = new();
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-    private readonly Logger _promoLogger = LogManager.GetLogger("promo");
+    private readonly Logger _loggerPromo = LogManager.GetLogger("promo");
+    private readonly Logger _loggerPrice = LogManager.GetLogger("price");
+    private readonly Logger _loggerStock = LogManager.GetLogger("stock");
+    private readonly Logger _loggerLabel = LogManager.GetLogger("label");
 
     public async Task ProcessaApaga(string sku)
     {
@@ -52,10 +54,13 @@ public class Actions(ControllerDB db)
             var oldPrice = $"{oldProduct.ProductAttributes.Price.AmountMicros / 1000000:N2}";
             var newPrice = $"{json.ProductAttributes.Price.AmountMicros / 1000000:N2}";
             var newpromoId = json.ProductAttributes.PromotionIds.FirstOrDefault();
-            var logStr = $"{sku} atualizando";
+
+            var logStr = $"{sku} atualizando ";
             if (newpromoId != oldPromo)
             {
-                logStr += $" promo '{oldPromo}' => '{newpromoId}'";
+                var promoLog = $"promo '{oldPromo}' => '{newpromoId}' ";
+                logStr += promoLog;
+                _loggerPromo.Info(sku + ": " + promoLog);
                 if (string.IsNullOrEmpty(newpromoId))
                 {
                     await db.GoogleFeed.RemovePromotionIdDoSku(sku);
@@ -67,15 +72,43 @@ public class Actions(ControllerDB db)
             }
             else
             {
-                logStr += $" mantendo {newpromoId}";
+                logStr += $" mantendo promo {newpromoId}";
             }
 
-            logStr += oldLabel != newLabel ? $" label {oldLabel} => {newLabel}" : $" mantendo label {oldLabel}";
-            logStr += oldStock != newStock ? $" stock {oldStock} => {newStock}" : $" mantendo stock {oldStock}";
-            logStr += oldPrice != newPrice ? $" price {oldPrice} => {newPrice}" : $" mantendo price {oldPrice}";
+            if (oldLabel != newLabel)
+            {
+                var labelLog = $" label {oldLabel} => {newLabel} ";
+                logStr += labelLog;
+                _loggerLabel.Info(sku + ": " + labelLog);
+            }
+            else
+            {
+                logStr += $" mantendo label {oldLabel} ";
+            }
+
+            if (oldStock != newStock)
+            {
+                var stockLog = $" stock {oldStock} => {newStock} ";
+                logStr += stockLog;
+                _loggerStock.Info(sku + ": " + stockLog);
+            }
+            else
+            {
+                logStr += $" mantendo stock {oldStock} ";
+            }
+
+            if (oldPrice != newPrice)
+            {
+                var priceLog = $" price {oldPrice} => {newPrice} ";
+                logStr += priceLog;
+                _loggerPrice.Info(sku + ": " + priceLog);
+            }
+            else
+            {
+                logStr += $" mantendo price {oldPrice} ";
+            }
 
             _logger.Info(logStr);
-            _promoLogger.Info(logStr);
         }
         else // inserindo novo
         {
@@ -84,19 +117,25 @@ public class Actions(ControllerDB db)
             var logStr = $"{sku} inserido";
             if (!string.IsNullOrEmpty(promoId))
             {
-                logStr += $" com promo {promoId}";
+                var promolog = $" com promo {promoId}";
+                _loggerPromo.Info(sku + promolog);
+                logStr += promolog;
                 await db.GoogleFeed.SalvaOuAtualizaPromotionIdDoSku(sku, promoId);
             }
             else
             {
-                logStr += " sem promo";
+                var promolog = " sem promo";
+                _loggerPromo.Info(sku + promolog);
+                logStr += promolog;
             }
 
+            _loggerLabel.Info(sku + "label: " + json.ProductAttributes.CustomLabel0);
             logStr += $", customLabel {json.ProductAttributes.CustomLabel0}";
+            _loggerStock.Info(sku + "stock: " +  json.ProductAttributes.Availability);
             logStr += $" ({json.ProductAttributes.Availability})";
+            _loggerPrice.Info(sku + "price: " + $" R$ {(float)json.ProductAttributes.Price.AmountMicros / 1000000:N2}");
             logStr += $" R$ {(float)json.ProductAttributes.Price.AmountMicros / 1000000:N2}";
             _logger.Info(logStr);
-            _promoLogger.Info(logStr);
 
             await db.GoogleFeed.UpdateSkuOnProductFeed(sku);
         }
